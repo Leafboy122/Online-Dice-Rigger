@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Hollow Hub",
+  "version": "1.11.0",
+  "description": "Hollowwwhubbb",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.online-dice.com/*"
+  ],
+  "action": {
+    "default_title": "Hollow Hub",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.online-dice.com/roll-color-dice/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hollow Hub</title>
+<link rel="stylesheet" href="popup.css">
+<script src="popup.js" defer></script>
+</head>
+<body>
+<main class="app">
+<header><span class="logo">🎲</span><div><h1>Hollow Hub</h1><p>discord.gg/g9GxaK5b3T</p></div></header>
+<section class="panel">
+<label for="picker">Custom dice color</label>
+<div class="picker"><input id="picker" type="color" value="#4169e1"><code id="hex">#4169E1</code></div>
+<p class="hint">Quick colors (same hex values as Allowed colors)</p>
+<div id="customColorPresets" class="colors custom-presets"></div>
+<button id="apply" class="primary">Apply to all dice</button>
+</section>
+<section class="panel">
+<h2>Colors To Change</h2>
+<p class="hint">Color toggles are saved preferences. Apply a color to show a visual overlay only.</p>
+<div id="colors" class="colors"></div>
+<button id="reset" class="secondary">Reset defaults</button>
+<button id="downloadLog" class="secondary">Download z-index log.txt</button>
+</section>
+<section class="panel keybind-panel">
+  <h2>Keybinds</h2>
+  <p class="hint">Set a key for each color. Press that key on the dice page to toggle the color in Allowed colors. Leave blank to disable a keybind.</p>
+  <div id="keybinds" class="keybind-list"></div>
+  <button id="saveKeybinds" class="primary">Save keybinds</button>
+</section>
+<section class="panel blacklist-panel">
+  <h2>Color Blacklist</h2>
+  <p class="hint">When a die's original color matches the selected color, show your replacement color instead. This only changes the visual overlay.</p>
+  <label class="toggle-row"><input id="blacklistEnabled" type="checkbox"> Enable color blacklist</label>
+  <div class="blacklist-fields">
+    <div class="field"><label for="blacklistSource">If die color is</label><div class="picker"><input id="blacklistSource" type="color" value="#800080"><code id="blacklistSourceHex">#800080</code></div></div>
+    <div class="field"><label for="blacklistReplacement">Replace with</label><div class="picker"><input id="blacklistReplacement" type="color" value="#ffa500"><code id="blacklistReplacementHex">#FFA500</code></div></div>
+  </div>
+  <button id="applyBlacklist" class="primary">Apply blacklist rule</button>
+</section>
+<p id="status" role="status">Ready</p>
+</main>
+</body>
+</html>
